@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Navigation() {
   const pathname = usePathname();
   return (
-    <nav className="md:flex hidden justify-center gap-4 mt-8">
+    <nav className="md:flex hidden justify-center gap-4 mt-8 border-b border-slate-200 pb-5">
       <Each of={menu} render={({ title, href }) =>
         <Link href={href} className={`${inter.className} text-slate-600 h-7 w-auto p-2 flex justify-center font-medium items-center hover:bg-slate-300 rounded-md transition-all ${pathname === href && "text-slate-950"}`}>{title}</Link>
       } />

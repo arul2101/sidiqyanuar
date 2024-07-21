@@ -50,8 +50,6 @@ export default function Header() {
           } />
         </div>
       </section>
-
-      <Navigation />
     </header>
   )
 }
