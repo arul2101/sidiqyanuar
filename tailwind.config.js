@@ -1,4 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require('tailwindcss/plugin');
+
+const rotateX = plugin(function ({ addUtilities }) {
+  addUtilities({
+    '.rotate-y-5': {
+      'transform': 'rotateY(15deg) skewY(3deg)'
+    },
+    '.-rotate-y-5': {
+      'transform': 'rotateY(15deg) skewY(-3deg)'
+    },
+    '-rotate-y-3': {
+      'transform': 'rotateY(30deg) skewY(2deg)'
+    },
+    '.perspective-2000': {
+      'perspective': '2000px'
+    },
+    '.transform-perserve-3d': {
+      'transform-style': "preserve-3d"
+    }
+  })
+})
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,5 +37,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [rotateX],
 };

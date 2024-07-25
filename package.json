@@ -16,6 +16,7 @@
     "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
+    "@xpd/tailwind-3dtransforms": "^1.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",

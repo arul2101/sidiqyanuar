@@ -43,6 +43,7 @@ export default function NavigationPhone({ toggle, onToggle }) {
               <Link
                 href={href}
                 className={`${dmSans.className} hover:bg-slate-200 pl-4 py-3 rounded-md transition-all ${pathname === href && "bg-slate-200"}`}
+                onClick={() => onToggle(false)}
               >{title}</Link>
             } />
           </div>
@@ -57,6 +58,7 @@ export default function NavigationPhone({ toggle, onToggle }) {
                 href={href}
                 target="_blank"
                 className="text-2xl h-10 w-10 rounded-full flex items-center justify-center hover:bg-slate-200 cursor-pointer hover:bg-opacity-60 transition-all text-slate-700"
+                onClick={() => onToggle(false)}
               >{element}</a>
             } />
           </div>

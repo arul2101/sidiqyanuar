@@ -1,7 +1,6 @@
 "use client";
 
-import { FiMenu } from "react-icons/fi";
-import { FiMoon } from "react-icons/fi";
+import { FiMenu, FiMoon, FiSun } from "react-icons/fi";
 import { FiUserPlus } from "react-icons/fi";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -9,11 +8,13 @@ import NavigationPhone from "./NavigationPhone";
 import ProfilePicture from "@/components/ProfilePicture";
 import { Poppins } from 'next/font/google';
 import Icons from "./Icons";
+// import { FaSun } from "react-icons/fa";
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle("overflow-y-hidden");
@@ -28,8 +29,8 @@ export default function Header() {
 
         <ProfilePicture position="mobileUp" />
 
-        <div className="button_navigation">
-          <FiMoon />
+        <div className="button_navigation" onClick={() => setDarkMode(!darkMode)}>
+          {!darkMode ? <FiMoon /> : <FiSun />}
         </div>
       </section>
 

@@ -48,10 +48,6 @@ export const menu = [
     title: "About",
     href: "/about"
   },
-  {
-    title: "Contact",
-    href: "/contact"
-  }
 ]
 
 export const menuPortfolio = [
