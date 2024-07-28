@@ -1,7 +1,7 @@
 import Portfolio from "@/components/Portfolio";
 
 export const metadata = {
-  title: "Sidiq Yanuar | Portfolio"
+  title: "Portfolio"
 };
 
 export default function PortfolioPage() {

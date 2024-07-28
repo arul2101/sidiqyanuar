@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
 
 export const metadata = {
-  title: "Sidiq Yanuar | Homepage"
+  title: "Homepage"
 };
 
 export default function Home() {

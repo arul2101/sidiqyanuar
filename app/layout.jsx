@@ -8,8 +8,14 @@ import Theme from "@/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Sidiq Yanuar",
-  description: "Arul's website portfolio"
+  title: {
+    template: "Sidiq Yanuar | %s",
+    default: "Sidiq Yanuar",
+  },
+  description: "Arul's website portfolio",
+  twitter: {
+    card: "summary_large_image"
+  }
 };
 
 export default function RootLayout({ children }) {
