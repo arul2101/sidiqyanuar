@@ -13,7 +13,6 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Navigation() {
   const pathname = usePathname();
 
-  console.log(pathname)
   return (
     <m.nav
       className="md:flex hidden justify-center gap-4 mt-8 border-b border-slate-200 dark:border-slate-800 pb-2"

@@ -19,8 +19,13 @@ export default function Header() {
   const [toggle, setToggle] = useState(false);
   const { theme, setTheme, } = useTheme("light");
 
+
   useEffect(() => {
-    document.body.classList.toggle("overflow-y-hidden");
+    if (!toggle) {
+      document.body.classList.remove("overflow-y-hidden");
+    } else {
+      document.body.classList.add("overflow-y-hidden");
+    }
   }, [toggle])
 
   useEffect(() => {
@@ -29,7 +34,7 @@ export default function Header() {
 
   return (
     <header
-      className="2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto px-4 py-4"
+      className={`2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto px-4 py-4`}
     >
       <m.section
         className="flex justify-between items-center py-6"
