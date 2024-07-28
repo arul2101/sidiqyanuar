@@ -41,7 +41,7 @@ export default function Hero() {
       <p className="-mt-2 font-semibold text-slate-400">{text}</p>
 
       <m.p
-        className={`${sourceSans.className} max-w-lg text-lg md:text-xl font-light absolute bottom-4`}
+        className={`${sourceSans.className} max-w-lg text-lg md:text-xl font-light absolute md:bottom-4 bottom-2`}
         initial={{ x: "+75%", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         exit={{ opacity: 0 }}
