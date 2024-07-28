@@ -3,6 +3,7 @@ import "@/app/_style/globals.css"
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Theme from "@/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,16 +14,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        <Navigation />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} dark:bg-dark-mode`}>
+        <Theme>
+          <Header />
+          <Navigation />
 
-        <main>
-          {children}
-        </main>
+          <main>
+            {children}
+          </main>
 
-        <Footer />
+          <Footer />
+        </Theme>
       </body>
     </html>
   );

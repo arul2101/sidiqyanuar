@@ -12,6 +12,6 @@
   }
 
   .button_follow {
-    @apply h-[2.5rem] w-[6.5rem] bg-blue-600 rounded-full text-white font-medium flex items-center justify-center gap-2 md:order-last hover:bg-opacity-90 transition-all
+    @apply h-[2.5rem] w-[6.5rem] bg-blue-600 rounded-full text-white font-medium flex items-center justify-center gap-2 md:order-last hover:bg-opacity-90 transition-all dark:bg-dark-mode2nd dark:hover:bg-[#8dcbce]
   }
 }

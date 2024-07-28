@@ -18,7 +18,16 @@ const rotateX = plugin(function ({ addUtilities }) {
     },
     '.transform-perserve-3d': {
       'transform-style': "preserve-3d"
-    }
+    },
+    '.bg-dark-mode': {
+      'background-color': '#0a192f'
+    },
+    '.bg-dark-mode2nd': {
+      'background-color': '#76ABAE'
+    },
+    '.transform-scale-x': {
+      'transform': 'scaleX(.5)'
+    },
   })
 })
 
@@ -38,4 +47,5 @@ module.exports = {
     },
   },
   plugins: [rotateX],
+  darkMode: 'class',
 };
