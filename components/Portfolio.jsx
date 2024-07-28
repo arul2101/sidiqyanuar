@@ -3,11 +3,9 @@
 import { useState } from "react";
 import Categories from "./Categories";
 import { dataPortfolio } from "@/constant";
-import Each from "@/utils/Each";
-import Image from "next/image";
-import { FiGithub } from "react-icons/fi";
-
 import { motion as m } from "framer-motion";
+import ItemPortfolio from "./ItemPortfolio";
+import Each from "@/utils/Each";
 
 export default function Portfolio() {
   const [data, setData] = useState(dataPortfolio);
@@ -22,7 +20,6 @@ export default function Portfolio() {
       return item.category === category;
     });
     setData(newItems);
-    console.log(data);
   }
 
   return (
@@ -52,35 +49,8 @@ export default function Portfolio() {
         transition={{ duration: .75, ease: "linear" }}
       >
         {data.length > 0 ? (
-          <Each of={data} render={({ title, link, github, img, tech }) =>
-            <div className="p-2 w-[28rem] relative">
-              <Image
-                src={img}
-                height={400}
-                alt="Image Portfolio"
-                className="mb-2 rounded-md"
-              />
-
-              <div className="flex flex-col">
-                <h2 className="text-xl">{title}</h2>
-
-                <ul className="flex gap-2 flex-wrap">
-                  <Each of={tech} render={({ title, icon }) =>
-                    <li className="bg-slate-300 dark:bg-slate-700 px-2 rounded-md flex items-center gap-1">
-                      {icon}{title}
-                    </li>
-                  } />
-                </ul>
-
-                <div className="flex justify-between items-center mt-4">
-                  <a href={link} target="_blank" className="text-slate-600 font-light  hover:text-slate-950 dark:text-slate-400 dark:hover:text-slate-600">Demo</a>
-
-                  <div className="">
-                    <a href={github} target="_blank" className="text-[1.3rem] hover:bg-slate-200 dark:hover:bg-slate-600 rounded-full h-7 w-7 flex items-center justify-center"><FiGithub /></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <Each of={data} render={(props) =>
+            <ItemPortfolio {...props} />
           } />
         ) : (
           <p className="mt-40">NO DATA</p>
