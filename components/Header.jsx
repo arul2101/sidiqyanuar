@@ -5,7 +5,7 @@ import { FiUserPlus } from "react-icons/fi";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import NavigationPhone from "./NavigationPhone";
-import ProfilePicture from "@/components/ProfilePicture";
+import Logo from "@/components/Logo";
 import { Poppins } from 'next/font/google';
 import Icons from "./Icons";
 import { useTheme } from "next-themes";
@@ -42,7 +42,7 @@ export default function Header() {
           <FiMenu />
         </div>
 
-        <ProfilePicture position="mobileUp" />
+        <Logo position="mobileUp" />
 
         <div className="button_navigation" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
           {theme === "light" && mounted ? <FiMoon /> : <FiSun />}

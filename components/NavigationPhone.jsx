@@ -4,7 +4,7 @@ import { icon, menu } from "@/constant";
 import Each from "@/utils/Each";
 import Link from "next/link";
 import { VscChromeClose } from "react-icons/vsc";
-import ProfilePicture from "./ProfilePicture";
+import Logo from "./Logo";
 import { DM_Sans } from 'next/font/google';
 import { Inter } from 'next/font/google';
 import { usePathname } from "next/navigation";
@@ -26,7 +26,7 @@ export default function NavigationPhone({ toggle, onToggle }) {
       ></div>
       <nav className={`absolute md:hidden h-screen w-[20rem] bg-white dark:bg-dark-mode z-50 top-0 left-0 p-6 transition-all ${toggle ? "left-0" : "left-[-999px]"}`}>
         <section className="flex justify-between items-center">
-          <ProfilePicture position="phone" />
+          <Logo position="phone" />
 
           <button
             className="text-xl h-8 w-8 flex items-center justify-center rounded-full hover:bg-slate-200 hover:bg-opacity-60"

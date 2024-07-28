@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ProfilePicture from "@/public/img/profile-picture.png";
+import ArulGantengImage from "@/public/img/arul-ganteng.png";
 import { Source_Sans_3 } from 'next/font/google';
 import { useTypewriter } from 'react-simple-typewriter'
 import { motion as m } from "framer-motion";
@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <m.section
-      className="max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 border-b border-slate-200 dark:border-slate-800 py-8 px-8 text-center flex flex-col gap-2 items-center h-[20rem] relative"
+      className="max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 border-b border-slate-200 dark:border-slate-800 pt-4 px-8 text-center flex flex-col gap-2 items-center h-[20rem] relative"
     >
       <m.div
         initial={{ x: "-75%", opacity: 0 }}
@@ -26,9 +26,9 @@ export default function Hero() {
         transition={{ duration: .75, ease: "linear" }}
       >
         <Image
-          src={ProfilePicture}
+          src={ArulGantengImage}
           alt="Profile Picture Image"
-          className="w-[6rem] rounded-full bg-blue-950"
+          className="w-[10rem] rounded-full bg-blue-950"
         />
       </m.div>
       <m.h2
@@ -41,7 +41,7 @@ export default function Hero() {
       <p className="-mt-2 font-semibold text-slate-400">{text}</p>
 
       <m.p
-        className={`${sourceSans.className} max-w-lg text-lg md:text-xl font-light absolute bottom-11`}
+        className={`${sourceSans.className} max-w-lg text-lg md:text-xl font-light absolute bottom-4`}
         initial={{ x: "+75%", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         exit={{ opacity: 0 }}
