@@ -9,6 +9,11 @@ import { motion as m } from "framer-motion";
 const sourceSans = Source_Sans_3({ subsets: ['latin'] });
 
 export default function AboutMe() {
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
   return (
     <m.section
       className="py-20 px-4 max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 max-w-4xl mx-auto"
@@ -34,7 +39,11 @@ export default function AboutMe() {
 
         <p className='mb-4'>If you interested about my work experience, you can visit my LinkedIn</p>
 
-        <button className='text-white bg-blue-600 dark:bg-dark-mode2nd hover:bg-blue-400 dark:hover:bg-[#8dcbce] transition-all px-4 py-2 rounded-md flex items-center gap-2'>Linked <FaLinkedinIn /></button>
+        <button
+          className='text-white bg-blue-600 dark:bg-dark-mode2nd hover:bg-blue-400 dark:hover:bg-[#8dcbce] transition-all px-4 py-2 rounded-md flex items-center gap-2'
+          type='button'
+          onClick={() => openInNewTab("https://www.linkedin.com/in/muhammad-yanuarullah-assidiq-90a698255/")}
+        >Linked <FaLinkedinIn /></button>
       </div>
     </m.section>
   )
