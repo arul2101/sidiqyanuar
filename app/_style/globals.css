@@ -15,3 +15,41 @@
     @apply h-[2.5rem] w-[6.5rem] bg-blue-600 rounded-full text-white font-medium flex items-center justify-center gap-2 md:order-last hover:bg-opacity-90 transition-all dark:bg-dark-mode2nd dark:hover:bg-[#8dcbce]
   }
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(200px) scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.fade {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 25%;
+}
+
+@keyframes appear_2 {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+
+.left-fade {
+  animation: appear_2 linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 25%;
+}

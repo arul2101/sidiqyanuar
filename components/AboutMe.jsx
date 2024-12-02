@@ -32,7 +32,7 @@ export default function AboutMe() {
         />
       </div>
 
-      <div className='md:px-20 px-8'>
+      <div className='md:px-20 px-8 fade'>
         <p className='mb-4'>Hello! My full name is Muhammad Yanuarullah Assidiq, you can call me Arul or Anwar. I&#39;m 23 years old, I was born on January 21, 2001 in Indonesia, Jakarta.</p>
 
         <p className='mb-4'>I&#39;m obsessed with making things and even more obsessed with making things better. In everyday life, I work as a data entry in a company in Jakarta. I have been interested in web development since 2018 and started self-taught since 2019.</p>

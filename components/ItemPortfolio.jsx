@@ -5,7 +5,7 @@ import TechStack from "./TechStack";
 
 export default function ItemPortfolio({ title, link, github, img, tech }) {
   return (
-    <div className="p-2 w-[28rem] relative">
+    <div className="p-2 w-[28rem] relative fade">
       <Image
         src={img}
         height={400}

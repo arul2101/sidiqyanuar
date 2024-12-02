@@ -14,7 +14,7 @@ export default function Contact() {
 
   return (
     <m.section
-      className="py-20 px-4 flex flex-col items-center gap-4 max-w-lg mx-auto"
+      className="py-20 px-4 flex flex-col items-center gap-4 max-w-lg mx-auto left-fade"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

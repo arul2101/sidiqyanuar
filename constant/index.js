@@ -130,31 +130,31 @@ export const dataPortfolio = [
     link: "https://my-anime-chan.vercel.app",
     github: "https://github.com/arul2101/my-anime-chan"
   },
-  {
-    id: 3,
-    category: "Front End",
-    tech: [
-      {
-        title: "React JS",
-        icon: <FaReact />
-      },
-      {
-        title: "Framer Motion",
-        icon: <TbBrandFramerMotion />
-      },
-      {
-        title: "React Slick",
-      },
-      {
-        title: "Vanilla CSS",
-        icon: <FaCss3 />
-      }
-    ],
-    title: "Company Website",
-    img: rizerDigitalImage,
-    link: "https://arul2101.github.io/rizer-digital",
-    github: "https://github.com/arul2101/rizer-digital"
-  },
+  // {
+  //   id: 3,
+  //   category: "Front End",
+  //   tech: [
+  //     {
+  //       title: "React JS",
+  //       icon: <FaReact />
+  //     },
+  //     {
+  //       title: "Framer Motion",
+  //       icon: <TbBrandFramerMotion />
+  //     },
+  //     {
+  //       title: "React Slick",
+  //     },
+  //     {
+  //       title: "Vanilla CSS",
+  //       icon: <FaCss3 />
+  //     }
+  //   ],
+  //   title: "Company Website",
+  //   img: rizerDigitalImage,
+  //   link: "https://arul2101.github.io/rizer-digital",
+  //   github: "https://github.com/arul2101/rizer-digital"
+  // },
   {
     id: 4,
     category: "Front End",
