@@ -2,21 +2,27 @@
 
 import { icon, menu } from "@/constant";
 import Each from "@/utils/Each";
-import Link from "next/link";
 import { VscChromeClose } from "react-icons/vsc";
 import Logo from "./Logo";
 import { DM_Sans } from 'next/font/google';
 import { Inter } from 'next/font/google';
 import { usePathname } from "next/navigation";
 import Icons from "./Icons";
+import { Link } from "@/i18n/routing";
 
 
 const dmSans = DM_Sans({ subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 
-export default function NavigationPhone({ toggle, onToggle }) {
+export default function NavigationPhone({ toggle, onToggle, locale }) {
   const pathname = usePathname();
+  const isActive = (href) => {
+    const activeRoute = href === '/' ? `/${locale}` : `/${locale}${href}`;
+    const path = pathname.split("/");
+    const adding = path.filter(item => item !== 'blog' && item !== locale).join('');
+    return pathname === activeRoute + (adding !== '' ? `/${adding}` : '');
+  }
 
   return (
     <>
@@ -43,7 +49,7 @@ export default function NavigationPhone({ toggle, onToggle }) {
             <Each of={menu} render={({ title, href }) =>
               <Link
                 href={href}
-                className={`${dmSans.className} hover:bg-slate-200 dark:hover:bg-dark-mode2nd pl-4 py-3 rounded-md transition-all ${pathname === href && "bg-slate-200 dark:bg-dark-mode2nd"}`}
+                className={`${dmSans.className} hover:bg-slate-200 dark:hover:bg-dark-mode2nd pl-4 py-3 rounded-md transition-all ${isActive(href) && "bg-slate-200 dark:bg-dark-mode2nd"}`}
                 onClick={() => onToggle(false)}
               >{title}</Link>
             } />

@@ -1,35 +1,41 @@
-import Each from "@/utils/Each";
-import Image from "next/image";
-import { FiGithub } from "react-icons/fi";
-import TechStack from "./TechStack";
+"use client"
 
-export default function ItemPortfolio({ title, link, github, img, tech }) {
-  return (
-    <div className="p-2 w-[28rem] relative fade">
-      <Image
-        src={img}
-        height={400}
-        alt="Image Portfolio"
-        className="mb-2 rounded-md"
-      />
+import Image from "next/image";
+import { Link } from "@/i18n/routing";
+import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+export default function ItemPortfolio({ title, description, slug, image }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (mounted) return (
+    <Link href={`/project/${slug}`} className="p-2 w-[28rem] relative fade hover:shadow-lg transition-all hover:scale-105 duration-300 rounded-lg shadow-slate-950 dark:shadow-[#76ABAE]">
+      <div className="w-full">
+        <Image
+          src={image}
+          height={400}
+          width={1080}
+          alt="Image Portfolio"
+          className="mb-2 rounded-md"
+        />
+      </div>
+
 
       <div className="flex flex-col">
         <h2 className="text-xl">{title}</h2>
 
-        <ul className="flex gap-2 flex-wrap">
-          <Each of={tech} render={({ title, icon }) =>
-            <TechStack title={title} icon={icon} />
-          } />
-        </ul>
+        <p className="font-light text-[.9rem]">{description}...</p>
 
-        <div className="flex justify-between items-center mt-4">
-          <a href={link} target="_blank" className="text-slate-600 font-light  hover:text-slate-950 dark:text-slate-400 dark:hover:text-slate-600">Demo</a>
-
-          <div className="">
-            <a href={github} target="_blank" className="text-[1.3rem] hover:bg-slate-200 dark:hover:bg-slate-600 rounded-full h-7 w-7 flex items-center justify-center"><FiGithub /></a>
-          </div>
+        <div className="flex justify-end text-blue-600 dark:text-dark-mode mt-4">
+          <Link href={`/project/${slug}`} className="flex items-center gap-2">
+            Details
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

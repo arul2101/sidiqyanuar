@@ -3,7 +3,8 @@
 import { Source_Sans_3 } from 'next/font/google';
 import Image from 'next/image';
 import { FaLinkedinIn } from "react-icons/fa";
-import AboutMeImg from "@/public/img/about-me.jpg";
+// import AboutMeImg from "@/public/img/about-me.jpg";
+
 import { motion as m } from "framer-motion";
 
 const sourceSans = Source_Sans_3({ subsets: ['latin'] });
@@ -25,11 +26,11 @@ export default function AboutMe() {
       <h2 className={`${sourceSans.className} text-center mb-8 text-4xl`}>About Me</h2>
 
       <div className='mb-10 relative before:content-[""] before:absolute before:border-t-8 before:border-l-8 before:border-blue-500 dark:before:border-[#76ABAE] before:top-0 before:left-0 md:before:w-[85%] before:w-[80%] before:h-full before:box-border perspective-2000 h-[450px] max-md:h-[350px] w-[80%] mx-auto after after:content-[""] after:absolute after:border-b-8 after:border-r-8 after:border-blue-500 dark:after:border-[#76ABAE] after:top-0 after:left-0 md:after:w-[85%] after:w-[80%] after:h-full after:box-border box-border left-10 hover:cursor-pointer hover:-rotate-y-5 transition-all before:hover:rotate-y-5 before:transition-all after:hover:rotate-y-5 after:transition-all'>
-        <Image
+        {/* <Image
           alt='About Me Image'
           src={AboutMeImg}
           className='absolute top-[30px] left-[-30px] w-[95%] h-[calc(100%-60px)]'
-        />
+        /> */}
       </div>
 
       <div className='md:px-20 px-8 fade'>

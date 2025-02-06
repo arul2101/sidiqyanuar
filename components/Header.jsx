@@ -11,10 +11,11 @@ import Icons from "./Icons";
 import { useTheme } from "next-themes";
 
 import { motion as m } from "framer-motion";
+import LocaleSwitch from "./LocaleSwitch";
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 
-export default function Header() {
+export default function Header({ locale }) {
   const [mounted, setMounted] = useState(false);
   const [toggle, setToggle] = useState(false);
   const { theme, setTheme, } = useTheme("light");
@@ -38,7 +39,7 @@ export default function Header() {
     >
       <m.section
         className="flex justify-between items-center py-6"
-        initial={{ x: "-75%", opacity: 0 }}
+        initial={{ x: "+75%", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: .75, ease: "linear" }}
@@ -49,23 +50,26 @@ export default function Header() {
 
         <Logo position="mobileUp" />
 
-        <div className="button_navigation" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-          {theme === "light" && mounted ? <FiMoon /> : <FiSun />}
+        <div className="flex items-center gap-2">
+          <LocaleSwitch />
+          <div className="button_navigation" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+            {theme === "light" && mounted ? <FiMoon /> : <FiSun />}
+          </div>
         </div>
+
       </m.section>
 
-      <NavigationPhone onToggle={setToggle} toggle={toggle} />
+      <NavigationPhone onToggle={setToggle} toggle={toggle} locale={locale} />
 
       <m.section
         className="flex items-center max-md:flex-col md:justify-between"
-        initial={{ x: "+75%", opacity: 0 }}
-        animate={{ x: "0%", opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: .75, ease: "linear" }}
       >
         <Link href="/" className={`mb-4 font-bold text-xl md:hidden block ${poppins.className}`}>Sidiq Yanuar</Link>
         <a href="https://www.instagram.com/m.yanuarullah" target="_blank" className="button_follow"><FiUserPlus />Follow</a>
-
         <Icons classNameOfContainer="flex gap-4 max-md:mt-8 mb-2" classNameOfEachIcon="text-2xl" />
       </m.section>
     </header>

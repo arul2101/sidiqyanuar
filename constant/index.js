@@ -41,12 +41,8 @@ export const menu = [
     href: "/"
   },
   {
-    title: "Portfolio",
-    href: "/portfolio"
-  },
-  {
-    title: "About",
-    href: "/about"
+    title: "Blog",
+    href: "/blog"
   },
 ]
 

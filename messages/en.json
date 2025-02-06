@@ -1,0 +1,26 @@
+{
+  "HomePage": {
+    "title": "Homepage"
+  },
+  "ProjectPage": {
+    "title": "Project"
+  },
+  "Hero": {
+    "description": "Im a simple, creative, enthusiastic and fun loving person. My dream is to create something for help many people"
+  },
+  "Portfolio": {
+    "title": "My Portfolio",
+    "description": "Most Recent Work"
+  },
+  "Blog": {
+    "title": "All Blogs",
+    "description": "Make you more productive through this blog 🔥"
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "description": "I'm currently looking for job or internship opportunities, my inbox is always open. I'll try my best to answer your email!"
+  },
+  "Footer": {
+    "description": "Created with"
+  }
+}

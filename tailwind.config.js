@@ -22,6 +22,9 @@ const rotateX = plugin(function ({ addUtilities }) {
     '.bg-dark-mode': {
       'background-color': '#0a192f'
     },
+    ".text-dark-mode": {
+      color: '#76ABAE'
+    },
     '.bg-dark-mode2nd': {
       'background-color': '#76ABAE'
     },
