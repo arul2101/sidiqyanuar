@@ -41,10 +41,10 @@ export default function Hero() {
         exit={{ opacity: 0 }}
         transition={{ duration: .75, ease: "linear" }}
       >Sidiq Yanuar</m.h2>
-      <p className="-mt-2 font-semibold text-slate-400 absolute md:top-[13.5rem] top-[13rem]">{text}</p>
+      <p className="-mt-2 font-semibold text-slate-400 absolute md:top-[13.5rem] top-[13rem] max-md:text-[.95rem]">{text}</p>
 
       <m.p
-        className={`${sourceSans.className} max-w-lg text-lg md:text-xl font-light mt-6`}
+        className={`${sourceSans.className} max-w-lg text-lg md:text-xl font-light mt-6 max-md:text-[.9rem] max-md:mt-4`}
         initial={{ x: "+75%", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         exit={{ opacity: 0 }}
