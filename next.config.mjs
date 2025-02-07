@@ -1,4 +1,4 @@
-import createNextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -7,15 +7,19 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'flagsapi.com'
+        protocol: "https",
+        hostname: "flagsapi.com",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io'
-      }
-    ]
-  }
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);
