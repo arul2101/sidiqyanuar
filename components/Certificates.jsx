@@ -49,6 +49,30 @@ export default function Certificates({
       platform: "HackerRank",
       img: "https://github.com/user-attachments/assets/ea8cd7ff-f9ac-4961-9062-8e3868db8acd",
     },
+    {
+      title:
+        locale === "en"
+          ? "Learn Basic Javascript Programming"
+          : "Belajar Dasar Pemrograman Javascript",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/bfa67f3d-f471-4bcb-8c36-8f18e61bf49f",
+    },
+    {
+      title:
+        locale === "en"
+          ? "Learning Web Front End for Beginners"
+          : "Belajar Front End Web Untuk Pemula",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/5031c284-6dc1-4700-b1e9-58497f386cea",
+    },
+    {
+      title:
+        locale === "en"
+          ? "Learn Basic Web Programming"
+          : "Belajar Dasar Pemrograman Web",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/45be6d82-cd36-4ece-825c-032b3e346569",
+    },
   ];
 
   return (
