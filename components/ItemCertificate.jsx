@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import ModalImageCertificate from "./ModalImageCertificate";
 
 export default function ItemCertificate({
   title,
@@ -24,6 +23,7 @@ export default function ItemCertificate({
           width={1080}
           alt="Image Portfolio"
           className="mb-2 rounded-md"
+          priority
         />
       </div>
 
