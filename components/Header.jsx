@@ -1,25 +1,23 @@
 "use client";
 
-import { FiMenu, FiMoon, FiSun } from "react-icons/fi";
-import { FiUserPlus } from "react-icons/fi";
+import { FiDownload, FiMenu, FiMoon, FiSun } from "react-icons/fi";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import NavigationPhone from "./NavigationPhone";
 import Logo from "@/components/Logo";
-import { Poppins } from 'next/font/google';
+import { Poppins } from "next/font/google";
 import Icons from "./Icons";
 import { useTheme } from "next-themes";
 
 import { motion as m } from "framer-motion";
 import LocaleSwitch from "./LocaleSwitch";
 
-const poppins = Poppins({ subsets: ['latin'], weight: '400' });
+const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export default function Header({ locale }) {
   const [mounted, setMounted] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const { theme, setTheme, } = useTheme("light");
-
+  const { theme, setTheme } = useTheme("light");
 
   useEffect(() => {
     if (!toggle) {
@@ -27,7 +25,7 @@ export default function Header({ locale }) {
     } else {
       document.body.classList.add("overflow-y-hidden");
     }
-  }, [toggle])
+  }, [toggle]);
 
   useEffect(() => {
     setMounted(true);
@@ -42,9 +40,12 @@ export default function Header({ locale }) {
         initial={{ x: "+75%", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: .75, ease: "linear" }}
+        transition={{ duration: 0.75, ease: "linear" }}
       >
-        <div className="button_navigation md:hidden" onClick={() => setToggle(prevToggle => !prevToggle)}>
+        <div
+          className="button_navigation md:hidden"
+          onClick={() => setToggle((prevToggle) => !prevToggle)}
+        >
           <FiMenu />
         </div>
 
@@ -52,11 +53,13 @@ export default function Header({ locale }) {
 
         <div className="flex items-center gap-2">
           <LocaleSwitch />
-          <div className="button_navigation" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+          <div
+            className="button_navigation"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
             {theme === "light" && mounted ? <FiMoon /> : <FiSun />}
           </div>
         </div>
-
       </m.section>
 
       <NavigationPhone onToggle={setToggle} toggle={toggle} locale={locale} />
@@ -66,12 +69,28 @@ export default function Header({ locale }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: .75, ease: "linear" }}
+        transition={{ duration: 0.75, ease: "linear" }}
       >
-        <Link href="/" className={`mb-4 font-bold text-xl md:hidden block ${poppins.className}`}>Sidiq Yanuar</Link>
-        <a href="https://www.instagram.com/m.yanuarullah" target="_blank" className="button_follow"><FiUserPlus />Follow</a>
-        <Icons classNameOfContainer="flex gap-4 max-md:mt-8 mb-2" classNameOfEachIcon="text-2xl" />
+        <Link
+          href="/"
+          className={`mb-4 font-bold text-xl md:hidden block ${poppins.className}`}
+        >
+          Sidiq Yanuar
+        </Link>
+        <a
+          href={"assets/cv-updated-2025.pdf"}
+          target="_blank"
+          download
+          className="py-2 px-4 bg-blue-600 rounded-full text-white font-medium flex items-center justify-center gap-2 md:order-last hover:bg-opacity-90 transition-all dark:bg-dark-mode2nd dark:hover:bg-[#8dcbce]"
+        >
+          <FiDownload />
+          Download CV
+        </a>
+        <Icons
+          classNameOfContainer="flex gap-4 max-md:mt-8 mb-2"
+          classNameOfEachIcon="text-2xl"
+        />
       </m.section>
     </header>
-  )
+  );
 }
