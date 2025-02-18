@@ -54,9 +54,7 @@ export default function ModalImageCertificate({
               ? "scale-150 opacity-100 visible"
               : "scale-0 opacity-0 invisible"
           } duration-300`}
-          // className={`${
-          //   showImage ? "scale-50" : "scale-0"
-          // } duration-300 w-[400px] h-[400px]`}
+          priority
         />
       </div>
     </section>
