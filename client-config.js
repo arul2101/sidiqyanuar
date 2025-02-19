@@ -1,7 +1,7 @@
-import { createClient } from '@sanity/client'
+import { createClient } from "@sanity/client";
 
 export const client = createClient({
-  projectId: 'sk4j2ubm',
-  dataset: 'production',
-  useCdn: false
+  projectId: "sk4j2ubm",
+  dataset: "production",
+  useCdn: true,
 });

@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import ArrowBack from "./ArrowBack";
 import { formatTimestampToDate } from "@/utils/helper";
 import { PortableText } from "next-sanity";
 import { motion as m } from "framer-motion";
 import NotFound from "./NotFound";
+import { useRouter } from "next/navigation";
+import ArrowBack from "./ArrowBack";
 
 export default function BlogDetail(props) {
   const { title, author, authorImage, image, publishedAt, body, categories } =

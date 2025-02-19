@@ -4,22 +4,37 @@
 
 @layer components {
   .button_navigation {
-    @apply text-2xl h-10 w-10 rounded-full flex items-center justify-center hover:bg-slate-200 cursor-pointer hover:bg-opacity-60 transition-all
+    @apply text-2xl h-10 w-10 rounded-full flex items-center justify-center hover:bg-slate-200 cursor-pointer hover:bg-opacity-60 transition-all;
   }
 
   .icon_navigation {
-    @apply text-2xl h-10 w-10 rounded-full flex items-center justify-center hover:bg-slate-200 cursor-pointer hover:bg-opacity-60 transition-all
+    @apply text-2xl h-10 w-10 rounded-full flex items-center justify-center hover:bg-slate-200 cursor-pointer hover:bg-opacity-60 transition-all;
   }
 
   .button_follow {
-    @apply h-[2.5rem] w-[6.5rem] bg-blue-600 rounded-full text-white font-medium flex items-center justify-center gap-2 md:order-last hover:bg-opacity-90 transition-all dark:bg-dark-mode2nd dark:hover:bg-[#8dcbce]
+    @apply h-[2.5rem] w-[6.5rem] bg-blue-600 rounded-full text-white font-medium flex items-center justify-center gap-2 md:order-last hover:bg-opacity-90 transition-all dark:bg-dark-mode2nd dark:hover:bg-[#8dcbce];
   }
+}
+
+@keyframes fadeInBlogs {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blogs-startup {
+  animation: fadeInBlogs linear;
+  animation-duration: 1s;
 }
 
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateY(200px) scale(.8);
+    transform: translateY(200px) scale(0.8);
   }
 
   to {
@@ -45,8 +60,6 @@
     transform: translateX(0px);
   }
 }
-
-
 
 .left-fade {
   animation: appear_2 linear;

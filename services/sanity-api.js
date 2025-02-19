@@ -1,27 +1,29 @@
-import { client } from "@/client-config"
-import { groq } from "next-sanity"
+import { client } from "@/client-config";
+import { defineQuery, groq } from "next-sanity";
 
 export async function getProjects(locale) {
   if (locale === "en") {
     return client.fetch(
-      groq`*[_type == "project"]{
+      groq`*[_type == "project"] | order(publishedAt desc){
         title,
         demo,
         "description": description_en,
         "slug": slug.current,
         "image": image.asset->url,
+        publishedAt,
       }`
-    )
+    );
   } else {
     return client.fetch(
-      groq`*[_type == "project"]{
+      groq`*[_type == "project"] | order(publishedAt desc){
         title,
         demo,
         "description": description_id,
         "slug": slug.current,
         "image": image.asset->url,
+        publishedAt,
       }`
-    )
+    );
   }
 }
 
@@ -36,8 +38,9 @@ export async function getProject(slug, locale) {
         "techstack": techstack[]->title,
         "image": image.asset->url,
         "body": body_en,
-      }`, { slug }
-    )
+      }`,
+      { slug }
+    );
   } else {
     return client.fetch(
       groq`*[_type == "project" && slug.current == $slug][0]{
@@ -48,15 +51,17 @@ export async function getProject(slug, locale) {
         "techstack": techstack[]->title,
         "image": image.asset->url,
         "body": body_id,
-      }`, { slug }
-    )
+      }`,
+      { slug }
+    );
   }
 }
 
-export async function getPosts(locale) {
+export async function getPosts(locale, search = "") {
   if (locale === "en") {
     return client.fetch(
-      groq`*[_type == "post"]{
+      defineQuery(
+        `*[_type == "post" ${search && "&& !defined($search) || title match $search || author->name match $search"}] | order(publishedAt desc){
         title,
         "description": description_en,
         "slug": slug.current,
@@ -65,10 +70,13 @@ export async function getPosts(locale) {
         "image": mainImage.asset->url,
         publishedAt,
       }`
-    )
+      ),
+      { search }
+    );
   } else {
     return client.fetch(
-      groq`*[_type == "post"]{
+      defineQuery(
+        `*[_type == "post" ${search && "&& !defined($search) || title_id match $search || author->name match $search"}] | order(publishedAt desc){
         "title": title_id,
         "description": description_id,
         "slug": slug.current,
@@ -77,7 +85,9 @@ export async function getPosts(locale) {
         "image": mainImage.asset->url,
         publishedAt,
       }`
-    )
+      ),
+      { search }
+    );
   }
 }
 
@@ -92,8 +102,9 @@ export async function getPost(slug, locale) {
         "categories": categories[]->title,
         "body": body_en,
         publishedAt,
-      }`, { slug }
-    )
+      }`,
+      { slug }
+    );
   } else {
     return client.fetch(
       groq`*[_type == "post" && slug.current == $slug][0]{
@@ -104,7 +115,8 @@ export async function getPost(slug, locale) {
         "categories": categories[]->title,
         "body": body_id,
         publishedAt,
-      }`, { slug }
-    )
+      }`,
+      { slug }
+    );
   }
 }

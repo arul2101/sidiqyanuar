@@ -13,6 +13,7 @@ export async function generateMetadata() {
 
 export default async function HomePage({ params: { locale } }) {
   const projects = await getProjects(locale);
+  console.log(projects);
   return (
     <>
       <Hero />
