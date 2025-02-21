@@ -14,7 +14,9 @@
   },
   "Blog": {
     "title": "Semua Blog",
-    "description": "Buat dirimu produktif lewat postingan di blog ini 🔥"
+    "description": "Buat dirimu produktif lewat postingan di blog ini 🔥",
+    "result_title_all": "Semua hasil",
+    "result_title_search": "Hasil pencarian untuk"
   },
   "Contact": {
     "title": "Terhubung dengan saya",

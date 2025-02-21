@@ -5,6 +5,9 @@ import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
+import { Source_Sans_3 } from "next/font/google";
+
+const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
 export default function HeaderBlogs({ search, locale }) {
   const [query, setQuery] = useState("");
@@ -12,7 +15,7 @@ export default function HeaderBlogs({ search, locale }) {
   const router = useRouter();
 
   return (
-    <section className="py-20 px-4 2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 mb-10">
+    <section className="pt-8 px-4 2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 mb-10">
       <m.h2
         className="text-center text-xl font-bold"
         initial={{ y: "-25%", opacity: 0 }}
@@ -66,6 +69,14 @@ export default function HeaderBlogs({ search, locale }) {
           </button>
         )}
       </m.form>
+
+      <h2
+        className={`text-center mt-8 ${sourceSans.className} text-[1.2rem] font-medium`}
+      >
+        {search
+          ? `${t("result_title_search")} "${search}"`
+          : `${t("result_title_all")}`}
+      </h2>
     </section>
   );
 }

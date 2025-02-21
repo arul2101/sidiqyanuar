@@ -1,8 +1,8 @@
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
-import Contact from "@/components/Contact";
 import { getTranslations } from "next-intl/server";
 import { getProjects } from "@/services/sanity-api";
+import ContactForm from "@/components/ContactForm";
 
 export async function generateMetadata() {
   const t = await getTranslations("HomePage");
@@ -13,12 +13,11 @@ export async function generateMetadata() {
 
 export default async function HomePage({ params: { locale } }) {
   const projects = await getProjects(locale);
-  console.log(projects);
   return (
     <>
       <Hero />
       <Portfolio projects={projects} locale={locale} />
-      <Contact />
+      <ContactForm />
     </>
   );
 }

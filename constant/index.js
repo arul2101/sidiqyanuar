@@ -1,6 +1,7 @@
 import { AiFillGithub } from "react-icons/ai";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import { Bounce } from "react-toastify";
 
 export const icon = [
   {
@@ -31,3 +32,15 @@ export const menu = [
     href: "/blog",
   },
 ];
+
+export const configToast = {
+  position: "top-center",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: false,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "colored",
+  transition: Bounce,
+};

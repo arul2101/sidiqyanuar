@@ -1,38 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 
-const plugin = require('tailwindcss/plugin');
+const plugin = require("tailwindcss/plugin");
 
 const rotateX = plugin(function ({ addUtilities }) {
   addUtilities({
-    '.rotate-y-5': {
-      'transform': 'rotateY(15deg) skewY(3deg)'
+    ".rotate-y-5": {
+      transform: "rotateY(15deg) skewY(3deg)",
     },
-    '.-rotate-y-5': {
-      'transform': 'rotateY(15deg) skewY(-3deg)'
+    ".-rotate-y-5": {
+      transform: "rotateY(15deg) skewY(-3deg)",
     },
-    '-rotate-y-3': {
-      'transform': 'rotateY(30deg) skewY(2deg)'
+    "-rotate-y-3": {
+      transform: "rotateY(30deg) skewY(2deg)",
     },
-    '.perspective-2000': {
-      'perspective': '2000px'
+    ".perspective-2000": {
+      perspective: "2000px",
     },
-    '.transform-perserve-3d': {
-      'transform-style': "preserve-3d"
+    ".transform-perserve-3d": {
+      "transform-style": "preserve-3d",
     },
-    '.bg-dark-mode': {
-      'background-color': '#0a192f'
+    ".bg-dark-mode": {
+      "background-color": "#0a192f",
     },
     ".text-dark-mode": {
-      color: '#76ABAE'
+      color: "#76ABAE",
     },
-    '.bg-dark-mode2nd': {
-      'background-color': '#76ABAE'
+    ".bg-dark-mode2nd": {
+      "background-color": "#76ABAE",
     },
-    '.transform-scale-x': {
-      'transform': 'scaleX(.5)'
+    ".transform-scale-x": {
+      transform: "scaleX(.5)",
     },
-  })
-})
+  });
+});
 
 module.exports = {
   content: [
@@ -50,5 +50,5 @@ module.exports = {
     },
   },
   plugins: [rotateX],
-  darkMode: 'class',
+  darkMode: "class",
 };

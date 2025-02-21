@@ -14,7 +14,9 @@
   },
   "Blog": {
     "title": "All Blogs",
-    "description": "Make you more productive through this blog 🔥"
+    "description": "Make you more productive through this blog 🔥",
+    "result_title_all": "All results",
+    "result_title_search": "Search results for"
   },
   "Contact": {
     "title": "Get In Touch",
