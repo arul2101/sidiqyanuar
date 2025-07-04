@@ -3,9 +3,7 @@
 import Image from "next/image";
 import { formatTimestampToDate } from "@/utils/helper";
 import { PortableText } from "next-sanity";
-import { motion as m } from "framer-motion";
 import NotFound from "./NotFound";
-import { useRouter } from "next/navigation";
 import ArrowBack from "./ArrowBack";
 
 export default function BlogDetail(props) {
@@ -19,13 +17,7 @@ export default function BlogDetail(props) {
   if (Object.keys(props).length > 0)
     return (
       <section className="2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto px-6 py-8 max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 relative">
-        <m.div
-          className="grid grid-cols-[70%,30%] gap-4 max-md:grid-cols-1 grid-rows-1 mt-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.75, ease: "linear" }}
-        >
+        <div className="grid grid-cols-[70%,30%] gap-4 max-md:grid-cols-1 grid-rows-1 mt-4 animate-show-fade-in">
           <div className="border-[1px] dark:border-slate-700 border-slate-200 rounded-md">
             <div className="px-4 py-4 flex items-center gap-2">
               <ArrowBack />
@@ -82,7 +74,7 @@ export default function BlogDetail(props) {
               </div>
             </div>
           </div>
-        </m.div>
+        </div>
       </section>
     );
 }

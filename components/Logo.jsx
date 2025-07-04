@@ -16,7 +16,7 @@ export default function Logo({ position }) {
   return (
     <Link
       href="/"
-      className={`${position === "phone" ? phoneStyle : mobileUpStyle}`}
+      className={`${position === "phone" ? phoneStyle : mobileUpStyle} animate-show-from-left`}
     >
       <Image
         src={LogoImage}

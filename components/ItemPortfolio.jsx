@@ -1,17 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export default function ItemPortfolio({ title, description, slug, image }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (mounted)
     return (
       <Link
         href={`/project/${slug}`}

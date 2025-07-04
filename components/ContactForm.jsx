@@ -10,7 +10,6 @@ import {
 } from "./ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignUpFormSchema } from "@/utils/validation";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
@@ -18,7 +17,7 @@ import { Textarea } from "./ui/textarea";
 import { useSendMessage } from "@/hooks/useSendMessage";
 import { useTranslations } from "next-intl";
 import { Source_Sans_3 } from "next/font/google";
-import { motion as m } from "framer-motion";
+import { SignUpFormSchema } from "@/utils/validation";
 
 const sourceSans = Source_Sans_3({ subsets: ["latin"] });
 
@@ -48,13 +47,7 @@ export default function ContactForm() {
   });
 
   return (
-    <m.section
-      className="py-20 px-4 max-w-2xl mx-auto mb-10"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1, ease: "linear" }}
-    >
+    <section className="pt-56 pb-20 px-4 max-w-2xl mx-auto mb-10 animate-show-fade-in">
       <h2
         className={`${sourceSans.className} text-4xl mb-4 font-semibold text-center`}
       >
@@ -154,6 +147,6 @@ export default function ContactForm() {
           </div>
         </form>
       </Form>
-    </m.section>
+    </section>
   );
 }
