@@ -50,6 +50,62 @@ export const getCertificates = (locale) => {
     {
       title:
         locale === "en"
+          ? "Learn Back-End Fundamentals with JavaScript"
+          : "Belajar Fundamental Back-End dengan JavaScript",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/7cb477f9-d5cb-43ee-8b30-81f12cb9ed87"
+    },
+    {
+      title:
+        locale === "en"
+          ? "Become a Back-End Developer Expert with JavaScript"
+          : "Menjadi Back-End Developer Expert dengan JavaScript",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/f9528967-eb4d-4e00-8ee8-eb968f866121"
+    },
+    {
+      title:
+        locale === "en"
+          ? "Learn Front-End Web Development Fundamentals"
+          : "Belajar Fundamental Front-End Web Development",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/57c31ab7-eeb6-4249-8f51-301ecb9b842c"
+    },
+    {
+      title:
+        locale === "en"
+          ? "Learn Intermediate Web Development"
+          : "Belajar Pengembangan Web Intermediate",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/a5b733f6-8a99-4983-9c61-2b5324b680c9"
+    },
+    {
+      title:
+        locale === "en"
+          ? "Learn Web Application Fundamentals with React"
+          : "Belajar Fundamental Aplikasi Web dengan React",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/c79fbb2d-2743-4a9a-99c6-5ed1948f5d7d"
+    },
+    {
+      title:
+        locale === "en"
+          ? "Become a React Web Developer Expert"
+          : "Menjadi React Web Developer Expert",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/6e9aed0c-5fa3-42aa-a927-e3bcffaaf873"
+    },
+    {
+      title:
+        locale === "en"
+          ? "Architecting on AWS"
+          : "Membangun Arsitektur Cloud di AWS",
+      platform: "Dicoding",
+      img: "https://github.com/user-attachments/assets/96048a02-25a1-4989-95ba-ac625ce3e0c0"
+    },
+    {
+      title:
+        locale === "en"
           ? "The Ultimate React Course 2024: React, Redux & More"
           : "Kursus Ultimate React 2024: React, Redux & Lainnya",
       platform: "Udemy",
