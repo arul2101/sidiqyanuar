@@ -17,20 +17,18 @@ export const metadata = {
     template: "Sidiq Yanuar | %s",
     default: "Sidiq Yanuar",
   },
-  description: "Arul's website portfolio",
+  description: "Im a simple, creative, enthusiastic and fun loving person. My dream is to create something for help many people",
   twitter: {
     card: "summary_large_image",
+    title: "Arul's website portfolio",
   },
 };
 
 export default async function LocaleLayout({ children, params: { locale } }) {
-  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (

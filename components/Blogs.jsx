@@ -4,7 +4,7 @@ import ItemBlog from "./ItemBlog";
 export default async function Blogs({ locale, search }) {
   const posts = await getPosts(locale, search);
   return (
-    <div className="flex justify-center gap-8 flex-wrap mt-4 animate-blogs-startup">
+    <div className="flex justify-center gap-8 flex-wrap mt-4 animate-show-fade-in">
       {posts?.length > 0 ? (
         posts.map((post) => <ItemBlog key={post.slug} {...post} />)
       ) : (

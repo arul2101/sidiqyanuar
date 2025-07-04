@@ -33,6 +33,7 @@ export async function getProject(slug, locale) {
       groq`*[_type == "project" && slug.current == $slug][0]{
         title,
         demo,
+        "description": description_en,
         github,
         "features": features_en,
         "techstack": techstack[]->title,
@@ -46,6 +47,7 @@ export async function getProject(slug, locale) {
       groq`*[_type == "project" && slug.current == $slug][0]{
         title,
         demo,
+        "description": description_id,
         github,
         "features": features_id,
         "techstack": techstack[]->title,
@@ -97,6 +99,7 @@ export async function getPost(slug, locale) {
       groq`*[_type == "post" && slug.current == $slug][0]{
         title,
         "author": author->name,
+        "description": description_en,
         "authorImage": author->image.asset->url,
         "image": mainImage.asset->url,
         "categories": categories[]->title,
@@ -110,6 +113,7 @@ export async function getPost(slug, locale) {
       groq`*[_type == "post" && slug.current == $slug][0]{
         "title": title_id,
         "author": author->name,
+        "description": description_id,
         "authorImage": author->image.asset->url,
         "image": mainImage.asset->url,
         "categories": categories[]->title,

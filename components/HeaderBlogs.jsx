@@ -16,35 +16,19 @@ export default function HeaderBlogs({ search, locale }) {
 
   return (
     <section className="pt-8 px-4 2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800 mb-10">
-      <m.h2
-        className="text-center text-xl font-bold"
-        initial={{ y: "-25%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.75, ease: "linear" }}
-      >
+      <h2 className="text-center text-xl font-bold animate-show-from-top">
         {t("title")}
-      </m.h2>
-      <m.p
-        className="text-center font-light"
-        initial={{ y: "-25%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.75, ease: "linear" }}
-      >
+      </h2>
+      <p className="text-center font-light animate-show-from-top">
         {t("description")}
-      </m.p>
+      </p>
 
-      <m.form
+      <form
         onSubmit={(e) => {
           e.preventDefault();
           router.push(`?search=${query.split(" ").join("+")}`);
         }}
-        className="mt-5 relative md:w-[30rem] w-[20rem] mx-auto"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.75, ease: "linear" }}
+        className="mt-5 relative md:w-[30rem] w-[20rem] mx-auto animate-show-fade-in"
       >
         <input
           type="text"
@@ -68,7 +52,7 @@ export default function HeaderBlogs({ search, locale }) {
             <X />
           </button>
         )}
-      </m.form>
+      </form>
 
       <h2
         className={`text-center mt-8 ${sourceSans.className} text-[1.2rem] font-medium`}

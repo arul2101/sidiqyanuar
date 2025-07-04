@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes fadeInBlogs {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -26,9 +26,93 @@
   }
 }
 
-.animate-blogs-startup {
-  animation: fadeInBlogs linear;
-  animation-duration: 1s;
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes showFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes showFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes showFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+.animate-show-from-left {
+  animation: showFromLeft linear;
+  animation-duration: .75s;
+}
+
+.animate-show-from-right {
+  animation: showFromRight linear;
+  animation-duration: .75s;
+}
+
+.animate-show-from-bottom {
+  animation: showFromBottom linear;
+  animation-duration: .75s;
+}
+
+.animate-show-from-top {
+  animation: showFromTop linear;
+  animation-duration: .75s;
+}
+
+.animate-show-fade-in {
+  animation: fadeIn linear;
+  animation-duration: .75s;
+}
+
+.animate-exit-fade-out {
+  animation: fadeOut linear;
+  animation-duration: .75s;
 }
 
 @keyframes appear {

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion as m } from "framer-motion";
 import Each from "@/utils/Each";
 
 const menu = [
@@ -16,13 +15,7 @@ export default function FilterShowcase({
   onSelectedShowcase,
 }) {
   return (
-    <m.ul
-      className="flex justify-center items-center gap-2 mt-6 mb-8"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.75, ease: "linear" }}
-    >
+    <ul className="flex justify-center items-center gap-2 mt-6 mb-8 animate-show-fade-in">
       <Each
         of={menu}
         render={({ title }) => (
@@ -34,6 +27,6 @@ export default function FilterShowcase({
           </li>
         )}
       />
-    </m.ul>
+    </ul>
   );
 }
