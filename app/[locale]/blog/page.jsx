@@ -10,7 +10,17 @@ export async function generateMetadata() {
     metadataBase: new URL('https://www.sidiqyanuar.vercel.app/id/blog'),
     keywords: ["blog arul", "sidiq yanuar blog", 'arul blog'],
     title: "Blog",
-    description: t('description')
+    openGraph: {
+      description: t('description'),
+      images: [
+        {
+          url: 'https://sidiqyanuar.vercel.app/opengraph-image.png',
+          alt: 'My Website Open Graph Image',
+          width: 1200,
+          height: 630,
+        }
+      ]
+    },
   };
 }
 
