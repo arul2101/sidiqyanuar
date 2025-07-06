@@ -6,7 +6,11 @@ export default function Projects({ projects }) {
     <div className="flex justify-center gap-4 flex-wrap mt-4 animate-show-fade-in">
       <Each
         of={projects}
-        render={(props) => <ItemPortfolio {...props} />}
+        render={(props) => {
+          const { fdprocessedid, ...filteredProps } = props;
+
+          return <ItemPortfolio {...filteredProps} />
+        } }
         />
     </div>
   )

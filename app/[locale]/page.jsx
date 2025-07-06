@@ -2,7 +2,9 @@ import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
 import { getTranslations } from "next-intl/server";
 import { getProjects } from "@/services/sanity-api";
-import ContactForm from "@/components/ContactForm";
+import dynamic from 'next/dynamic';
+const ContactForm = dynamic(() => import('@/components/ContactForm'), { ssr: false });
+
 
 export async function generateMetadata() {
   const t = await getTranslations("HomePage");

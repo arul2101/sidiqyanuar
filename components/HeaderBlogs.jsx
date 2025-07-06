@@ -1,6 +1,5 @@
 "use client";
 
-import { motion as m } from "framer-motion";
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";

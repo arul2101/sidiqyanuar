@@ -45,7 +45,7 @@ export default function ModalImageCertificate({
         className={`fixed p-4 top-[50%] left-[50%] mr-[-50%] translate-x-[-50%] translate-y-[-50%] z-50 ${showImage ? "visible" : "invisible"} md:w-[45%] w-[70%]`}
       >
         <Image
-          src={selectedImage}
+          src={selectedImage || '/opengraph-image.png'}
           alt="image"
           height={1920}
           width={1080}
