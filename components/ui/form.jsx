@@ -11,9 +11,11 @@ const Form = FormProvider;
 const FormFieldContext = React.createContext({});
 
 const FormField = ({ ...props }) => {
+  const { fdprocessedid, ...filteredProps } = props;
+
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props} />
+      <Controller {...filteredProps} />
     </FormFieldContext.Provider>
   );
 };
@@ -44,11 +46,12 @@ const useFormField = () => {
 const FormItemContext = React.createContext({});
 
 const FormItem = React.forwardRef(({ className, ...props }, ref) => {
+  const { fdprocessedid, ...filteredProps } = props;
   const id = React.useId();
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={cn("space-y-2", className)} {...props} />
+      <div ref={ref} className={cn("space-y-2", className)} {...filteredProps} />
     </FormItemContext.Provider>
   );
 });
@@ -56,13 +59,15 @@ FormItem.displayName = "FormItem";
 
 const FormLabel = React.forwardRef(({ className, ...props }, ref) => {
   const { error, formItemId } = useFormField();
+  const { fdprocessedid, ...filteredProps } = props;
+
 
   return (
     <Label
       ref={ref}
       className={cn(error && "text-red-600 dark:text-red-600", className)}
       htmlFor={formItemId}
-      {...props}
+      {...filteredProps}
     />
   );
 });
@@ -71,6 +76,7 @@ FormLabel.displayName = "FormLabel";
 const FormControl = React.forwardRef(({ ...props }, ref) => {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
+  const { fdprocessedid, ...filteredProps } = props;
 
   return (
     <Slot
@@ -82,7 +88,7 @@ const FormControl = React.forwardRef(({ ...props }, ref) => {
           : `${formDescriptionId} ${formMessageId}`
       }
       aria-invalid={!!error}
-      {...props}
+      {...filteredProps}
     />
   );
 });
@@ -90,6 +96,7 @@ FormControl.displayName = "FormControl";
 
 const FormDescription = React.forwardRef(({ className, ...props }, ref) => {
   const { formDescriptionId } = useFormField();
+  const { fdprocessedid, ...filteredProps } = props;
 
   return (
     <p
@@ -99,7 +106,7 @@ const FormDescription = React.forwardRef(({ className, ...props }, ref) => {
         "text-[0.8rem] text-slate-500 dark:text-slate-400",
         className
       )}
-      {...props}
+      {...filteredProps}
     />
   );
 });
@@ -109,6 +116,7 @@ const FormMessage = React.forwardRef(
   ({ className, children, ...props }, ref) => {
     const { error, formMessageId } = useFormField();
     const body = error ? String(error?.message) : children;
+    const { fdprocessedid, ...filteredProps } = props;
 
     if (!body) {
       return null;
@@ -122,7 +130,7 @@ const FormMessage = React.forwardRef(
           "text-[0.8rem] font-medium text-red-600 dark:text-red-600",
           className
         )}
-        {...props}
+        {...filteredProps}
       >
         {body}
       </p>

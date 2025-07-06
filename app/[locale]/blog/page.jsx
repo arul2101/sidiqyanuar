@@ -7,6 +7,8 @@ import { getTranslations } from "next-intl/server";
 export async function generateMetadata() {
   const t = await getTranslations("Blog");
   return {
+    metadataBase: new URL('https://www.sidiqyanuar.vercel.app/id/blog'),
+    keywords: ["blog arul", "sidiq yanuar blog", 'arul blog'],
     title: "Blog",
     description: t('description')
   };

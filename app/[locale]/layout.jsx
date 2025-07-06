@@ -13,19 +13,31 @@ import { Bounce, ToastContainer } from "react-toastify";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL('https://www.sidiqyanuar.vercel.app'),
+  keywords: ['sidiqyanuar', 'sidiq yanuar', 'muhammad yanuarullah assidiq', 'arul', 'arul website', 'sidiq yanuar portfolio', 'sidiq yanuar portofolio', "arul's website portfolio", 'website arul'],
   title: {
+    default: 'Sidiq Yanuar',
     template: "Sidiq Yanuar | %s",
-    default: "Sidiq Yanuar",
   },
   verification: {
     google: "eDIgKm-oW2BlG5tUlvhB1JdX7RdJAiDyQXO3p4H2iqE"
   },
-  description: "Im a simple, creative, enthusiastic and fun loving person. My dream is to create something for help many people",
+  openGraph: {
+    description: 'Im a simple, creative, enthusiastic and fun loving person. My dream is to create something for help many people',
+    images: [
+      {
+        url: 'https://www.sidiqyanuar.vercel.app/opengraph-image.png',
+        alt: 'My Website Open Graph Image',
+        width: 1200,
+        height: 630,
+      }
+    ]
+  },
   twitter: {
     card: "summary_large_image",
     title: "Arul's website portfolio",
   },
-};
+}
 
 export default async function LocaleLayout({ children, params: { locale } }) {
   if (!routing.locales.includes(locale)) {

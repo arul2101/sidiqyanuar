@@ -23,13 +23,6 @@ export default function ItemPortfolio({ title, description, slug, image }) {
           <h2 className="text-xl">{title}</h2>
 
           <p className="font-light text-[.9rem]">{description}...</p>
-
-          <div className="flex justify-end text-blue-600 dark:text-dark-mode mt-4">
-            <Link href={`/project/${slug}`} className="flex items-center gap-2">
-              Details
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
         </div>
       </Link>
     );

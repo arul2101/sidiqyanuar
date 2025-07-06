@@ -17,6 +17,7 @@ export async function generateMetadata({ params: { locale, slug } }) {
       images: [
         {
           url: image,
+          alt: 'post image'
         }
       ]
     },
