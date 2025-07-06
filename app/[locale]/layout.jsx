@@ -26,7 +26,7 @@ export const metadata = {
     description: 'Im a simple, creative, enthusiastic and fun loving person. My dream is to create something for help many people',
     images: [
       {
-        url: 'https://www.sidiqyanuar.vercel.app/opengraph-image.png',
+        url: 'https://sidiqyanuar.vercel.app/opengraph-image.png',
         alt: 'My Website Open Graph Image',
         width: 1200,
         height: 630,

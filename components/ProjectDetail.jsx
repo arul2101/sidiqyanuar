@@ -15,7 +15,6 @@ import { PortableText } from "next-sanity";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import NotFound from "./NotFound";
 import { SiShadcnui } from "react-icons/si";
-import { motion as m } from "framer-motion";
 
 const icons = {
   tailwind: <RiTailwindCssFill />,
@@ -36,13 +35,7 @@ export default function ProjectDetail(props) {
       <section className="2xl:max-w-[1480px] lg:max-w-7xl md:max-w-3xl max-w-2xl mx-auto px-4 py-8 max-md:border-t max-md:border-slate-200 max-md:dark:border-slate-800">
         <ArrowBack />
 
-        <m.div
-          className="grid grid-cols-2 max-md:grid-cols-1 mt-4 gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.75, ease: "linear" }}
-        >
+        <div className="grid grid-cols-2 max-md:grid-cols-1 mt-4 gap-4 animate-show-fade-in">
           <div>
             <h2 className="text-[2.2rem]">{title}</h2>
             <PortableText value={body} />
@@ -124,7 +117,7 @@ export default function ProjectDetail(props) {
               </div>
             </div>
           </div>
-        </m.div>
+        </div>
       </section>
     );
 }
